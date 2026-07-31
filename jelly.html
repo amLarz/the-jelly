@@ -1,16 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Widget</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> 
+        .widget-row1 {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
 
-    <body>
-        <div id="widget-container">
-            <h1>Widget</h1>
-        </div>
+        .widget-row2 {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .gps-location {
+            display: block;
+            width: 30%;
+            height: 200px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
 
-        <script src="widget.js"></script>
-    </body>
-</html>
+        .top-tourist-spots {
+            display: block;
+            width: 30%;
+            height: 200px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .documents {
+            display: flex;
+            width: 30%;
+            height: 200px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .documents form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex;
+            justify-content: center;
+            margin: 10px;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>The Jelly</h1></center>
+
+    <div class="widget-row1">
+
+    <fieldset class="gps-location" location=center>  
+        <legend>GPS Location</legend>
+        <form>
+            <!-- Latitude Input PLACEHOLDER -->
+            <p>
+                <label for="latitude">Latitude:</label><br>
+                <input type="text" id="latitude" name="latitude" placeholder="00.000000" readonly>
+            </p>
+
+            <!-- Longitude Input PLACEHOLDER -->
+            <p>
+                <label for="longitude">Longitude:</label><br>
+                <input type="text" id="longitude" name="longitude" placeholder="00.000000" readonly>
+            </p>
+
+            <!-- Optional: Timestamp of when the machine last updated the location PLACEHOLDER -->
+            <p> 
+                <label for="timestamp">Height:</label><br>
+                <input type="text" id="timestamp" name="timestamp" placeholder="YYYY-MM-DD HH:MM:SS" readonly>
+            </p>
+        </form>
+    </fieldset>
+
+    <fieldset class="top-tourist-spots" location=center>
+        <legend>Top Tourist Spots</legend>
+        <p>1. Spot A</p>
+        <p>2. Spot B</p>
+        <p>3. Spot C</p>
+    </fieldset>
+    </div>
+    <div class="widget-row2">
+        <fieldset class="documents" location=center>
+            <legend>Documents</legend>
+            <form action="/upload-endpoint" method="POST" enctype="multipart/form-data">
+                <label for="document">Choose a file to upload passport:</label>
+                <input type="file" id="document" name="userDocument" required>
+                <button type="submit">Upload Document</button>
+            </form>
+
+            <form action="/upload-endpoint" method="POST" enctype="multipart/form-data">
+                <label for="document">Choose a file to upload visa:</label>
+                <input type="file" id="document" name="userDocument" required>
+                <button type="submit">Upload Document</button>
+            </form>
+
+        </fieldset>
+    </div>
+</body>
