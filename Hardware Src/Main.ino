@@ -1,12 +1,11 @@
-
 #include <WiFi.h>
 #include <WebServer.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_ST7789.h>
 #include <SPI.h>
 
-const char* ssid     = "YOUR_WIFI_SSID";
-const char* password = "YOUR_WIFI_PASSWORD";
+const char* ssid     = "omarkamel";
+const char* password = "12345678";
 WebServer server(80);
 
 #define TFT_CS    5
@@ -14,7 +13,9 @@ WebServer server(80);
 #define TFT_DC    2
 Adafruit_ST7789 tft = Adafruit_ST7789(TFT_CS, TFT_DC, TFT_RST);
 
-#include "screen.h"
+String currentCard = "No Card.";
+
+// #include "screens.h"
 
 const char HTML_PAGE[] PROGMEM = R"rawliteral(
 <!DOCTYPE html>
@@ -183,14 +184,18 @@ const char HTML_PAGE[] PROGMEM = R"rawliteral(
                 <input type="file" id="document" name="userDocument" required>
                 <button type="submit">Upload Document</button>
             </form>
+            
+            <!-- Payment Card Upload by NFC-->
+    <form action="/upload-endpoint" method="POST" enctype="multipart/form-data">
+        <label for="cardName">Card Name:</label>
+        <input type="text" id="cardName" name="cardName" placeholder="Enter card name"><br>
 
-            <form action="/upload-endpoint" method="POST" enctype="multipart/form-data">
-                <label for="document">Choose a file to upload payment card:</label>
-                <input type="file" id="document" name="userDocument" required>
-                <button type="submit">Upload Document</button>
-            </form>
+        <label for="cardUID">Payment Card:</label>
+        <input type="text" id="cardUID" name="cardUID" placeholder="Tap Jelly for input" readonly><br>
+        <button type="submit">Save Card</button>
+    </form>
 
-        </fieldset>
+    </fieldset>
     </div>
 </body>
 )rawliteral";
@@ -205,10 +210,15 @@ void setup() {
     tft.setRotation(1);
     tft.fillScreen(ST77XX_BLACK);
 
-    tft.drawRGBBitmap(10, 10, myImagePixels, 240, 240);  // match your real dims
+    // tft.drawRGBBitmap(10, 10, myImagePixels, 240, 240);  // match your real dims
 
     WiFi.begin(ssid, password);
     while (WiFi.status() != WL_CONNECTED) { delay(500); }
+    
+    Serial.println();
+    Serial.println("WiFi connected!");
+    Serial.print("IP Address: ");
+    Serial.println(WiFi.localIP());
 
     server.on("/", handleRoot);
     server.begin();
