@@ -39,9 +39,11 @@ Hardware:
 - MOMENTARY PUSH BUTTONS
 - PN532
 - NEO 6M GPS
+
 Programming Language/Firmware:
 - C++
 - HTML5
+
 Development Software/Testing:
 - Arduino IDE
 - VSCode
