@@ -13,9 +13,15 @@ This project is coded heavily in C++ inside the Arduino IDE but code is kept in 
 
 ## Features
 Here are the features included for this project:
-  - GPS
-  - NFC reader for keeping payment methods natively
-  - Recommendations of tourist spots near the area
+GPS
+- Takes the location of the device and displays it (both natively and on the self-hosted website)
+      
+NFC reader
+- Keep payment cards and save them on the device
+- Save other types of documents that may use NFC technology
+
+Lists of Tourist Spots
+- Include places based from the coordinates of the person
 
 ## Controls
 The device will have a screen and 3 buttons: down, up, select/return; respectively.
