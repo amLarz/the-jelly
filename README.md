@@ -1,7 +1,6 @@
 # The Jelly
 A small personal travel buddy.
 
-
 <img width="360" height="640" alt="11583" src="https://github.com/user-attachments/assets/27958890-935b-4b99-b3d9-dc18abda375a" />
 
 ## What is this?
