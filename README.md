@@ -17,6 +17,16 @@ Here are the features included for this project:
   - NFC reader for keeping payment methods natively
   - Recommendations of tourist spots near the area
 
+## Controls
+The device will have a screen and 3 buttons: down, up, select/return; respectively.
+
+- `down` button - navigating down
+- `up` button - navigating up
+- `select/return` button (when clicked) - selects item
+- `select/return` button (when held down - returns to previous frame
+
+
+
 
 
 
