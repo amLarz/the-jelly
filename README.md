@@ -6,6 +6,7 @@ A small personal travel buddy.
 ## What is this?
 The jelly is a travel buddy that can host it's own website with WiFi from your phone. 
 You can both view information on your phone or on the device itself.
+The idea comes from an image of a lone jellyfish in a deep ocean. Jellyfish are creatures that wonder and we wanted to capture that theme in our device.
 
 ## How is this made?
 For this project we mainly used ESP32 as the micro controller connected to hardware that can take data and place it on a screen or a website.
