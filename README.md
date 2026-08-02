@@ -15,7 +15,7 @@ This project is coded heavily in C++ inside the Arduino IDE but code is kept in 
 Here are the features included for this project:
   - GPS
   - NFC reader for keeping payment methods natively
-  - Recommendations near the area
+  - Recommendations of tourist spots near the area
 
 
 
