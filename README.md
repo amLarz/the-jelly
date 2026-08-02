@@ -1,7 +1,8 @@
 # The Jelly
 A small personal travel buddy.
 
-[Insert GIF/Image]
+
+<img width="1440" height="2560" alt="11583" src="https://github.com/user-attachments/assets/27958890-935b-4b99-b3d9-dc18abda375a" />
 
 ## What is this?
 The jelly is a travel buddy that can host it's own website with WiFi from your phone. 
