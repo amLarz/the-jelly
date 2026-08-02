@@ -43,7 +43,7 @@ Hardware:
 
 Programming Language/Firmware:
 - C++
-- HTML5
+- HTML/CSS
 
 Development Software/Testing:
 - Arduino IDE
