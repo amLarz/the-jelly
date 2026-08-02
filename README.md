@@ -31,8 +31,21 @@ The device will have a screen and 3 buttons: down, up, select/return; respective
 - `select/return` button (when clicked) - selects item
 - `select/return` button (when held down - returns to previous frame
 
-
-
+## Tech Stack 
+Hardware: 
+- ESP32
+- ST7789
+- 1.54
+- MOMENTARY PUSH BUTTONS
+- PN532
+- NEO 6M GPS
+Programming Language/Firmware:
+- C++
+- HTML5
+Development Software/Testing:
+- Arduino IDE
+- VSCode
+- Git and GitHub 
 
 
 
